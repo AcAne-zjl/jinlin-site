@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+  <title id="title">海边风景</title>
+  <desc id="desc">浅色海面、天空和岸线的简洁占位图</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#edf4f7"/>
+      <stop offset="1" stop-color="#f8f8f5"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#d6e6e8"/>
+      <stop offset="1" stop-color="#eef1ec"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="820" fill="url(#sky)"/>
+  <circle cx="910" cy="186" r="72" fill="#e8ded0" opacity=".75"/>
+  <path d="M0 438c134-42 268-42 402 0s268 42 402 0 263-44 396-8v390H0z" fill="url(#sea)"/>
+  <path d="M0 596c162-48 313-53 454-15 150 40 297 42 446 4 112-28 212-31 300-8v243H0z" fill="#f6f1e9"/>
+</svg>

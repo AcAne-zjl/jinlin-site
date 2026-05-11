@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+  <title id="title">车窗</title>
+  <desc id="desc">车窗外浅色风景的简洁占位图</desc>
+  <rect width="1200" height="820" fill="#f7f7f5"/>
+  <rect x="170" y="116" width="860" height="520" rx="28" fill="#ffffff" stroke="#dddddd"/>
+  <rect x="242" y="182" width="716" height="328" rx="18" fill="#eef3f4"/>
+  <path d="M242 426 420 312l152 88 122-74 264 144v40H242z" fill="#dfe8df"/>
+  <path d="M314 258h150M750 250h132" stroke="#ffffff" stroke-width="28" stroke-linecap="round"/>
+  <path d="M390 636 304 742M810 636l86 106M438 704h324" stroke="#d8d8d8" stroke-width="16" stroke-linecap="round"/>
+</svg>

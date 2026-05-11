@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JinLin</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand-mark" href="#" aria-label="回到 JinLin 首页">
+        <span>JinLin</span>
+      </a>
+      <div class="topbar-tools">
+        <nav class="filters" aria-label="内容分类">
+          <button class="filter is-active" type="button" data-filter="全部">全部</button>
+          <button class="filter" type="button" data-filter="旅行">旅行</button>
+          <button class="filter" type="button" data-filter="作品">作品</button>
+          <button class="filter" type="button" data-filter="碎碎念">碎碎念</button>
+          <button class="filter" type="button" data-filter="给作者的留言">留言</button>
+        </nav>
+        <button id="open-editor" class="quick-add" type="button">新增</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="board-title">
+        <div class="board-heading">
+          <p class="eyebrow">personal archive</p>
+          <h1 id="board-title">JinLin</h1>
+          <p class="board-note">照片、旅行、作品、碎碎念，以及家人朋友想留下的话。</p>
+        </div>
+        <div id="featured-gallery" class="featured-gallery" aria-label="首页照片展示"></div>
+      </section>
+
+      <section class="content-section" aria-labelledby="content-title">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">latest</p>
+            <h2 id="content-title">最近发布</h2>
+          </div>
+          <div class="board-stats" aria-live="polite">
+            <span id="visible-count">0</span>
+            <span>条内容</span>
+          </div>
+        </div>
+        <div id="wall" class="wall" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <dialog id="detail-dialog" class="detail-dialog" aria-labelledby="dialog-title">
+      <button class="dialog-close" type="button" aria-label="关闭">×</button>
+      <div id="dialog-content"></div>
+    </dialog>
+
+    <dialog id="editor-dialog" class="editor-dialog" aria-labelledby="editor-title">
+      <button class="editor-close" type="button" aria-label="关闭">×</button>
+      <form id="editor-form" class="editor-form">
+        <div class="editor-head">
+          <p class="eyebrow">publish</p>
+          <h2 id="editor-title">发布新内容</h2>
+          <p id="storage-status">填写内容、选择分类，保存后会出现在首页。</p>
+        </div>
+
+        <div class="form-grid">
+          <label>
+            <span>分类</span>
+            <select name="category">
+              <option value="旅行">旅行</option>
+              <option value="作品">作品</option>
+              <option value="碎碎念" selected>碎碎念</option>
+              <option value="给作者的留言">给作者的留言</option>
+            </select>
+          </label>
+
+          <label>
+            <span>日期</span>
+            <input name="date" type="date" />
+          </label>
+        </div>
+
+        <label>
+          <span>标题</span>
+          <input name="title" type="text" maxlength="32" placeholder="比如：周末的小逃跑" required />
+        </label>
+
+        <label>
+          <span>一句话</span>
+          <input name="excerpt" type="text" maxlength="80" placeholder="卡片上显示的短句" required />
+        </label>
+
+        <label>
+          <span>正文</span>
+          <textarea name="body" rows="5" placeholder="点开卡片后看到的内容，可以写故事、留言、灵感、心情。"></textarea>
+        </label>
+
+        <label>
+          <span>上传照片或作品图</span>
+          <input id="image-input" name="image" type="file" accept="image/*" />
+        </label>
+        <div id="image-preview" class="image-preview" aria-live="polite">还没有选择图片</div>
+
+        <div class="form-grid">
+          <label>
+            <span>标签</span>
+            <input name="tags" type="text" placeholder="咖啡, 海边, 灵感" />
+          </label>
+
+          <label>
+          <span>相关链接</span>
+          <input name="url" type="url" placeholder="https://..." />
+          </label>
+        </div>
+
+        <div class="editor-actions">
+          <button class="primary-action" type="submit">发布</button>
+          <button id="export-local" class="secondary-action" type="button">导出备份</button>
+          <button id="import-local" class="secondary-action" type="button">导入备份</button>
+          <button id="clear-local" class="danger-action" type="button">清空新增</button>
+        </div>
+        <input id="import-input" type="file" accept="application/json,.json" hidden />
+        <p id="editor-status" class="editor-status" aria-live="polite"></p>
+      </form>
+    </dialog>
+
+    <template id="card-template">
+      <article class="memory-card" tabindex="0">
+        <div class="card-media"></div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="card-category"></span>
+            <time class="card-date"></time>
+          </div>
+          <h2 class="card-title"></h2>
+          <p class="card-text"></p>
+          <div class="tag-row"></div>
+        </div>
+      </article>
+    </template>
+
+    <script src="cloud-config.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

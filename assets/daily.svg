@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+  <title id="title">桌面</title>
+  <desc id="desc">浅色桌面、杯子和纸张的简洁占位图</desc>
+  <rect width="1200" height="820" fill="#f7f7f5"/>
+  <rect x="166" y="150" width="380" height="270" rx="20" fill="#ffffff" stroke="#dddddd"/>
+  <rect x="654" y="188" width="298" height="198" rx="18" fill="#ffffff" stroke="#dddddd"/>
+  <circle cx="610" cy="520" r="94" fill="#ffffff" stroke="#d7d7d2"/>
+  <circle cx="610" cy="520" r="54" fill="#d8cabc" opacity=".85"/>
+  <path d="M715 504c42-12 78 12 78 52 0 43-39 68-78 55" fill="none" stroke="#d7d7d2" stroke-width="16" stroke-linecap="round"/>
+  <path d="M226 488h256M226 542h184M688 454h218" stroke="#d6d6d1" stroke-width="18" stroke-linecap="round"/>
+</svg>

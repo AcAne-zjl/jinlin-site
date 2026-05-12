@@ -46,19 +46,28 @@ async function init() {
   }
 
   localMemories = loadLocalMemories();
-  if (isCloudEnabled()) {
-    storageStatus.textContent = "当前已连接云端数据库，发布后家人刷新同一个网址就能看到。";
-    cloudMemories = await loadCloudMemories();
-  } else {
-    storageStatus.textContent = "当前使用本地保存。配置云端数据库后，家人才能在同一个网址看到新内容。";
-  }
-
   rebuildMemories();
   renderFeaturedGallery(memories);
   renderCards(memories);
   bindFilters();
   bindDialog();
   bindEditor();
+
+  if (isCloudEnabled()) {
+    storageStatus.textContent = "正在连接云端数据库。页面会先显示已有内容，连接成功后自动同步。";
+    syncCloudMemories();
+  } else {
+    storageStatus.textContent = "当前使用本地保存。配置云端数据库后，家人才能在同一个网址看到新内容。";
+  }
+}
+
+async function syncCloudMemories() {
+  cloudMemories = await loadCloudMemories();
+  rebuildMemories();
+  renderFeaturedGallery(memories);
+  renderCards(memories);
+  applyFilter();
+  storageStatus.textContent = "当前已连接云端数据库，发布后家人刷新同一个网址就能看到。";
 }
 
 function renderCards(items) {
